@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/wp-json/:path*", "destination": "https://aroundjakarta.com/wp-json/:path*" }
+  ],
+  "headers": [
+    {
+      "source": "/wp-json/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, s-maxage=300, stale-while-revalidate=600" }]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
+    }
+  ]
+}

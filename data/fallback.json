@@ -1,0 +1,285 @@
+{
+ "note": "Data cadangan: judul, kategori, tanggal, dan foto dibaca dari beranda aroundjakarta.com pada 16 Nov 2026. Isi artikel tidak disertakan.",
+ "categories": [
+  {
+   "id": 1,
+   "name": "Around Jakarta",
+   "slug": "around-jakarta",
+   "count": 114
+  },
+  {
+   "id": 2,
+   "name": "Trending News",
+   "slug": "trending-news",
+   "count": 21
+  },
+  {
+   "id": 3,
+   "name": "Ekonomi",
+   "slug": "ekonomi",
+   "count": 6
+  },
+  {
+   "id": 4,
+   "name": "Hukum",
+   "slug": "hukum",
+   "count": 6
+  },
+  {
+   "id": 5,
+   "name": "Event & Gaya Hidup",
+   "slug": "event-gaya-hidup",
+   "count": 3
+  },
+  {
+   "id": 6,
+   "name": "Metro",
+   "slug": "metro",
+   "count": 3
+  }
+ ],
+ "posts": [
+  {
+   "id": -1,
+   "slug": "bersaing-dengan-27-negara-aqueensa-kinara-wakili-indonesia-di-face-of-asia-2026",
+   "link": "https://aroundjakarta.com/bersaing-dengan-27-negara-aqueensa-kinara-wakili-indonesia-di-face-of-asia-2026/",
+   "date": "2026-11-15T09:00:00",
+   "title": "Bersaing dengan 27 Negara, Aqueensa Kinara Wakili Indonesia di Face of Asia 2026",
+   "excerpt": "Baru berusia 13 tahun, Aqueensa Kinara kembali mendapat kesempatan tampil di panggung fashion internasional.",
+   "content": null,
+   "cats": [
+    {
+     "id": 5,
+     "name": "Event & Gaya Hidup",
+     "slug": "event-gaya-hidup"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/11/IMG-20261116-WA0003-scaled.jpg",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/11/IMG-20261116-WA0003-scaled.jpg",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/11/IMG-20261116-WA0003-scaled.jpg",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/11/IMG-20261116-WA0003-scaled.jpg"
+   }
+  },
+  {
+   "id": -2,
+   "slug": "update-perolehan-medali-porprov-jabar-2026-depok-raih-3-emas",
+   "link": "https://aroundjakarta.com/update-perolehan-medali-porprov-jabar-2026-depok-raih-3-emas/",
+   "date": "2026-11-12T09:00:00",
+   "title": "Update Perolehan Medali Porprov Jabar 2026, Depok Raih 3 Emas",
+   "excerpt": "",
+   "content": null,
+   "cats": [],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/11/xUe7lzGvytfQ52dOBkKd4WLnq4JAuPuWGZoaBrXM.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/11/xUe7lzGvytfQ52dOBkKd4WLnq4JAuPuWGZoaBrXM.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/11/xUe7lzGvytfQ52dOBkKd4WLnq4JAuPuWGZoaBrXM.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/11/xUe7lzGvytfQ52dOBkKd4WLnq4JAuPuWGZoaBrXM.webp"
+   }
+  },
+  {
+   "id": -3,
+   "slug": "supian-suri-apresiasi-pengabdian-satlinmas-depok-fasilitas-dan-bpjs-kesehatan-diupayakan",
+   "link": "https://aroundjakarta.com/supian-suri-apresiasi-pengabdian-satlinmas-depok-fasilitas-dan-bpjs-kesehatan-diupayakan/",
+   "date": "2026-11-10T10:00:00",
+   "title": "Supian Suri Apresiasi Pengabdian Satlinmas Depok, Fasilitas dan BPJS Kesehatan Diupayakan",
+   "excerpt": "",
+   "content": null,
+   "cats": [],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/11/9v4Y3yI5q5W3ds1vE9jKTFqnpL9HtPDzGfjJL3Ix.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/11/9v4Y3yI5q5W3ds1vE9jKTFqnpL9HtPDzGfjJL3Ix.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/11/9v4Y3yI5q5W3ds1vE9jKTFqnpL9HtPDzGfjJL3Ix.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/11/9v4Y3yI5q5W3ds1vE9jKTFqnpL9HtPDzGfjJL3Ix.webp"
+   }
+  },
+  {
+   "id": -4,
+   "slug": "percepat-digitalisasi-transaksi-daerah-supian-suri-minta-perangkat-daerah-perkuat-sinergi",
+   "link": "https://aroundjakarta.com/percepat-digitalisasi-transaksi-daerah-supian-suri-minta-perangkat-daerah-perkuat-sinergi/",
+   "date": "2026-11-10T09:00:00",
+   "title": "Percepat Digitalisasi Transaksi Daerah, Supian Suri Minta Perangkat Daerah Perkuat Sinergi",
+   "excerpt": "",
+   "content": null,
+   "cats": [
+    {
+     "id": 1,
+     "name": "Around Jakarta",
+     "slug": "around-jakarta"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/11/sLxYx98LiHFtozWW9yyHEwnXbtBIh1VTB8sX7M6C.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/11/sLxYx98LiHFtozWW9yyHEwnXbtBIh1VTB8sX7M6C.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/11/sLxYx98LiHFtozWW9yyHEwnXbtBIh1VTB8sX7M6C.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/11/sLxYx98LiHFtozWW9yyHEwnXbtBIh1VTB8sX7M6C.webp"
+   }
+  },
+  {
+   "id": -5,
+   "slug": "apbd-depok-2027-alokasikan-rp1025-triliun-untuk-pendidikan-kesehatan-warga-diperkuat",
+   "link": "https://aroundjakarta.com/apbd-depok-2027-alokasikan-rp1025-triliun-untuk-pendidikan-kesehatan-warga-diperkuat/",
+   "date": "2026-11-04T09:00:00",
+   "title": "APBD Depok 2027 Alokasikan Rp1,025 Triliun untuk Pendidikan, Kesehatan Warga Diperkuat",
+   "excerpt": "",
+   "content": null,
+   "cats": [
+    {
+     "id": 1,
+     "name": "Around Jakarta",
+     "slug": "around-jakarta"
+    },
+    {
+     "id": 2,
+     "name": "Trending News",
+     "slug": "trending-news"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/11/sOTcnyGtZWD5chl26Hv4iDRtKHZ75OYz2v84O2hk-1.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/11/sOTcnyGtZWD5chl26Hv4iDRtKHZ75OYz2v84O2hk-1.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/11/sOTcnyGtZWD5chl26Hv4iDRtKHZ75OYz2v84O2hk-1.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/11/sOTcnyGtZWD5chl26Hv4iDRtKHZ75OYz2v84O2hk-1.webp"
+   }
+  },
+  {
+   "id": -6,
+   "slug": "ekonomi-depok-tumbuh-55-persen-ini-faktor-pendorongnya",
+   "link": "https://aroundjakarta.com/ekonomi-depok-tumbuh-55-persen-ini-faktor-pendorongnya/",
+   "date": "2026-11-03T12:00:00",
+   "title": "Ekonomi Depok Tumbuh 5,5 Persen, Ini Faktor Pendorongnya",
+   "excerpt": "",
+   "content": null,
+   "cats": [],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": null,
+   "noDate": true
+  },
+  {
+   "id": -7,
+   "slug": "fhui-dorong-mahasiswa-kritis-aksi-di-jalan-harus-berdampak-pada-kebijakan",
+   "link": "https://aroundjakarta.com/fhui-dorong-mahasiswa-kritis-aksi-di-jalan-harus-berdampak-pada-kebijakan/",
+   "date": "2026-10-31T09:00:00",
+   "title": "FHUI Dorong Mahasiswa Kritis, Aksi di Jalan Harus Berdampak pada Kebijakan",
+   "excerpt": "",
+   "content": null,
+   "cats": [
+    {
+     "id": 1,
+     "name": "Around Jakarta",
+     "slug": "around-jakarta"
+    },
+    {
+     "id": 4,
+     "name": "Hukum",
+     "slug": "hukum"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/10/IMG_20261030_195723-1024x768.jpg",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/10/IMG_20261030_195723-1024x768.jpg",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/10/IMG_20261030_195723-1024x768.jpg",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/10/IMG_20261030_195723-1024x768.jpg"
+   }
+  },
+  {
+   "id": -8,
+   "slug": "exit-tol-desari-segera-dibangun",
+   "link": "https://aroundjakarta.com/exit-tol-desari-segera-dibangun/",
+   "date": "2026-10-29T09:00:00",
+   "title": "Exit Tol Desari Segera Dibangun",
+   "excerpt": "",
+   "content": null,
+   "cats": [
+    {
+     "id": 2,
+     "name": "Trending News",
+     "slug": "trending-news"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/10/lbQ9Rwr14PuTQbSaVBllpzwHj9AjmMLGC4ZPDNJk.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/10/lbQ9Rwr14PuTQbSaVBllpzwHj9AjmMLGC4ZPDNJk.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/10/lbQ9Rwr14PuTQbSaVBllpzwHj9AjmMLGC4ZPDNJk.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/10/lbQ9Rwr14PuTQbSaVBllpzwHj9AjmMLGC4ZPDNJk.webp"
+   }
+  },
+  {
+   "id": -9,
+   "slug": "depok-bidik-hasil-terbaik-di-eksebisi-padel-porprov-jabar-2026",
+   "link": "https://aroundjakarta.com/depok-bidik-hasil-terbaik-di-eksebisi-padel-porprov-jabar-2026/",
+   "date": "2026-10-28T09:00:00",
+   "title": "Depok Bidik Hasil Terbaik di Eksebisi Padel Porprov Jabar 2026",
+   "excerpt": "",
+   "content": null,
+   "cats": [
+    {
+     "id": 2,
+     "name": "Trending News",
+     "slug": "trending-news"
+    }
+   ],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/10/fquXiR1pIM74oPMIUm0HeOiMSoGKIq6VBMWsT10T-1024x685.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/10/fquXiR1pIM74oPMIUm0HeOiMSoGKIq6VBMWsT10T-1024x685.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/10/fquXiR1pIM74oPMIUm0HeOiMSoGKIq6VBMWsT10T-1024x685.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/10/fquXiR1pIM74oPMIUm0HeOiMSoGKIq6VBMWsT10T-1024x685.webp"
+   }
+  },
+  {
+   "id": -10,
+   "slug": "izin-pendirian-rumah-ibadah-wali-kota-depok-sebut-semua-punya-hak-yang-sama",
+   "link": "https://aroundjakarta.com/izin-pendirian-rumah-ibadah-wali-kota-depok-sebut-semua-punya-hak-yang-sama/",
+   "date": "2026-10-26T09:00:00",
+   "title": "Izin Pendirian Rumah Ibadah, Wali Kota Depok Sebut Semua Punya Hak yang Sama",
+   "excerpt": "",
+   "content": null,
+   "cats": [],
+   "tags": [],
+   "author": "Redaksi AroundJakarta",
+   "imgAlt": "",
+   "caption": "",
+   "img": {
+    "full": "https://aroundjakarta.com/wp-content/uploads/2026/10/eeazP3jqKlpZtpycXbcfcBSiofzOtiRd54or7fIy.webp",
+    "large": "https://aroundjakarta.com/wp-content/uploads/2026/10/eeazP3jqKlpZtpycXbcfcBSiofzOtiRd54or7fIy.webp",
+    "medium": "https://aroundjakarta.com/wp-content/uploads/2026/10/eeazP3jqKlpZtpycXbcfcBSiofzOtiRd54or7fIy.webp",
+    "thumb": "https://aroundjakarta.com/wp-content/uploads/2026/10/eeazP3jqKlpZtpycXbcfcBSiofzOtiRd54or7fIy.webp"
+   }
+  }
+ ]
+}
