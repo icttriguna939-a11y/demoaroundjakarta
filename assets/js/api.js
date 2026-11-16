@@ -129,6 +129,19 @@
         return localPosts(await loadFallback(), o);
       }
     },
+    /* Komentar yang sudah disetujui di situs asli (hanya dibaca). */
+    async comments(postId) {
+      if (!postId || postId < 0) return { items: [], total: 0 };
+      try {
+        var r = await net('/comments', { post: postId, per_page: 50, order: 'asc', _fields: 'id,author_name,date,content,parent' });
+        return {
+          items: r.data.map(function (c) {
+            return { id: c.id, author: decode(c.author_name) || 'Pembaca', date: c.date, html: c.content && c.content.rendered, parent: c.parent };
+          }),
+          total: r.total
+        };
+      } catch (e) { return { items: [], total: 0 }; }
+    },
     async categories() {
       try {
         var r = await net('/categories', { per_page: 100, hide_empty: true, _fields: 'id,name,slug,count' });

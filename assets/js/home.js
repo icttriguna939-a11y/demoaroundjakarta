@@ -1,76 +1,58 @@
+/* Beranda: mengikuti aroundjakarta.com_beranda_berita_editorial/code.html */
 (async function () {
-  var U = UI, esc = U.esc, API = window.API, AJ = window.AJ;
-  U.chrome('home');
+  var U = UI, esc = U.esc;
+  U.mountTop('home');
   var app = document.getElementById('konten');
-  app.innerHTML = '<div class="wrap"><p class="loading">Memuat berita…</p></div>';
+  app.innerHTML = '<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 lg:grid-cols-12 gap-8" aria-busy="true">' +
+    '<div class="lg:col-span-5 aj-skel h-[540px]"></div><div class="lg:col-span-7 aj-skel h-[540px]"></div></div>';
 
-  var res = await Promise.all([API.categories(), API.posts({ perPage: 14 })]);
-  var cats = res[0].items, posts = res[1].items, totalPages = res[1].pages;
-  U.refine(cats);
-
-  if (!posts.length) {
-    app.innerHTML = '<div class="wrap"><p class="empty">Berita belum dapat dimuat. Coba muat ulang halaman.</p></div>';
-    U.finish();
+  var S = await U.loadShared();
+  if (!S.latest.length) {
+    document.getElementById('aj-hero').innerHTML = '';
+    app.innerHTML = '<div class="max-w-7xl mx-auto px-4 py-16 text-center text-slate-500">Berita belum dapat dimuat. Coba muat ulang halaman.</div>';
+    document.getElementById('aj-footer').innerHTML = U.footer();
     return;
   }
+  var take = U.picker(S.latest);
+  U.mountShell(S, take);
 
-  var tcat = cats.find(function (c) { return /trending/i.test(c.name); });
-  var trending = tcat ? (await API.posts({ perPage: 4, category: tcat.id })).items : [];
+  var focus = take(1)[0];
+  var popular = take(4, S.trending);
 
-  var hero = posts[0], side = posts.slice(1, 5), picks = posts.slice(5, 8), rest = posts.slice(8);
-
-  function readTxt(p) { var m = U.readMin(p); return m ? m + ' menit baca' : ''; }
-
-  var leadImg = hero.img
-    ? U.img(hero, 'large').replace('loading="lazy"', 'loading="eager" fetchpriority="high"')
-    : '<div class="ph"></div>';
-  var heroMeta = [U.dateLong(hero), hero.author, readTxt(hero)].filter(Boolean).map(esc).join('<span class="sep"> · </span>');
-
-  var html = '';
-  html += '<div class="ticker"><div class="wrap"><span class="pill"><i class="pulse"></i>Terbaru</span>' +
-    '<a href="' + U.postHref(hero) + '">' + esc(hero.title) + '</a>' +
-    (U.ago(hero) ? '<time>' + esc(U.ago(hero)) + '</time>' : '') + '</div></div>';
-
-  html += '<section class="hero" aria-label="Berita utama"><div class="wrap"><div class="hero-grid">' +
-    '<a class="lead" href="' + U.postHref(hero) + '">' + leadImg +
-    '<div class="body">' + U.badge(hero, true) + '<h1>' + esc(hero.title) + '</h1>' +
-    (hero.excerpt ? '<p>' + esc(hero.excerpt) + '</p>' : '') +
-    '<div class="meta">' + heroMeta + '</div></div></a>' +
-    '<aside class="side" aria-label="Berita terbaru"><div class="side-h"><i class="dot pulse"></i>Terbaru</div>' +
-    side.map(U.sideItem).join('') + '</aside></div>';
-  if (trending.length) {
-    html += '<div class="trend-row"><div class="t-h"><i class="dot"></i>' + esc(tcat.name) + '</div>' +
-      trending.map(U.trendItem).join('') + '</div>';
+  var html = '<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">';
+  /* Kolom kiri: kartu besar (Stitch "Breaking News") */
+  if (focus) {
+    var cn = U.catName(focus);
+    html += '<section class="lg:col-span-5" data-purpose="breaking-focus-column" aria-labelledby="h-breaking">' +
+      '<div class="flex items-center justify-between mb-4 border-b border-slate-300 pb-2"><h2 id="h-breaking" class="font-headline text-xl font-black text-slate-900 tracking-tight">Breaking News</h2>' +
+      '<span class="text-xs font-bold text-red-600 uppercase">Sorotan</span></div>' +
+      '<a href="' + U.postHref(focus) + '" class="relative group rounded-xl overflow-hidden shadow-lg h-[540px] flex flex-col justify-end p-6 bg-slate-900 text-white">' +
+      U.img(focus, 'large', 'absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out') +
+      '<div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div><div class="relative z-10">' +
+      '<div class="flex items-center gap-2 mb-2"><span class="bg-amber-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded tracking-wide">BREAKING</span>' +
+      (cn ? '<span class="bg-blue-600 text-white text-[10px] font-bold uppercase px-2 py-0.5 rounded tracking-wide">' + esc(cn) + '</span>' : '') + '</div>' +
+      '<h3 class="font-headline text-2xl font-bold leading-tight mb-3 text-white group-hover:text-slate-200 transition">' + esc(focus.title) + '</h3>' +
+      (focus.excerpt ? '<p class="text-slate-300 text-xs sm:text-sm line-clamp-3 mb-4 leading-relaxed">' + esc(focus.excerpt) + '</p>' : '') +
+      '<div class="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-slate-700">' +
+      '<span>' + esc(U.join([U.dShort(focus), 'Oleh ' + focus.author])) + '</span><span class="text-amber-400 font-medium">Baca Selengkapnya →</span></div></div></a></section>';
   }
-  html += '</div></section>';
+  /* Kolom kanan: Popular Now 2x2 (diisi kategori Trending News) */
+  html += '<section class="lg:col-span-7" data-purpose="popular-now-grid" aria-labelledby="h-popular">' +
+    '<div class="flex items-center justify-between mb-4 border-b border-slate-300 pb-2"><h2 id="h-popular" class="font-headline text-xl font-black text-slate-900 tracking-tight">Popular Now</h2>' +
+    '<a class="text-xs font-semibold text-blue-600 hover:text-blue-800 transition" href="' + (S.tcat ? U.catHref(S.tcat.slug) : 'cari.html') + '">Lihat Populer Lainnya</a></div>' +
+    '<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">' + popular.map(function (p) {
+      var c = U.catName(p);
+      return '<a href="' + U.postHref(p) + '" class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition">' +
+        '<div class="relative h-44 overflow-hidden bg-slate-100">' + U.img(p, 'medium', 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-300') +
+        (c ? '<div class="absolute bottom-2 left-2 flex gap-1"><span class="' + U.catColor(c) + ' text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">' + esc(c) + '</span></div>' : '') + '</div>' +
+        '<div class="p-4 flex-1 flex flex-col justify-between"><div>' +
+        '<h3 class="font-headline text-sm font-bold text-slate-900 group-hover:text-blue-600 transition leading-snug mb-2 line-clamp-2">' + esc(p.title) + '</h3>' +
+        (p.excerpt ? '<p class="text-slate-600 text-xs line-clamp-2 leading-relaxed">' + esc(p.excerpt) + '</p>' : '') + '</div>' +
+        '<div class="mt-4 pt-2 border-t border-slate-100 text-[11px] text-slate-400 flex justify-between"><span>' + esc(U.dShort(p)) + '</span>' +
+        '<span class="font-medium text-slate-600">' + esc(U.readTxt(p, 'Min Baca')) + '</span></div></div></a>';
+    }).join('') + '</div></section></div>';
 
-  html += '<div class="wrap">';
-  if (picks.length) {
-    html += '<section class="section" aria-label="Pilihan editor"><div class="sec-title"><h2>Pilihan Editor</h2></div>' +
-      '<div class="cols3">' + picks.map(U.card).join('') + '</div></section>';
-  }
-  html += '<div class="section grid-main"><section aria-label="Berita terbaru"><div class="sec-title"><h2>Berita Terbaru</h2></div>' +
-    '<div id="list">' + rest.map(function (p) { return U.row(p); }).join('') + '</div>' +
-    '<div class="more" id="more-wrap"' + (totalPages > 1 ? '' : ' hidden') + '><button class="btn ghost" type="button" id="more">Muat lebih banyak</button></div>' +
-    '</section><aside aria-label="Sidebar">' + U.catWidget(cats) + U.followWidget() + '</aside></div></div>';
-
-  if (AJ.VIDEO_ID) {
-    html += '<section class="video" aria-label="Aroundjakarta Video"><div class="wrap"><div>' + U.youtube(AJ.VIDEO_ID) + '</div>' +
-      '<div><span class="eyebrow">Aroundjakarta Video</span><h2>Tonton liputan kami</h2>' +
-      '<a class="btn red" href="' + esc(AJ.YT_CHANNEL) + '" rel="noopener">' + U.ICON.yt + ' Kanal YouTube</a></div></div></section>';
-  }
+  app.className = 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10';
   app.innerHTML = html;
-  app.removeAttribute('aria-busy');
-
-  var page = 1;
-  var more = document.getElementById('more');
-  if (more) more.addEventListener('click', async function () {
-    more.disabled = true; more.textContent = 'Memuat…';
-    page += 1;
-    var r = await API.posts({ perPage: 14, page: page });
-    document.getElementById('list').insertAdjacentHTML('beforeend', r.items.map(function (p) { return U.row(p); }).join(''));
-    if (page >= r.pages || !r.items.length) document.getElementById('more-wrap').hidden = true;
-    more.disabled = false; more.textContent = 'Muat lebih banyak';
-  });
-  U.finish();
+  U.mountBottom(S, take);
 })();

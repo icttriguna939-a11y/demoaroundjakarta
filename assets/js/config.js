@@ -9,6 +9,10 @@ window.AJ = {
   VIDEO_ID: 'kHRUbxAhPyU',
   YT_CHANNEL: 'https://www.youtube.com/@AroundJakartacom',
   INSTAGRAM: 'https://www.instagram.com/aroundjakarta.info',
+  // Isi bila akun resminya sudah ada; ikon hanya tampil jika alamat diisi (di situs asli masih "#").
+  X_URL: '',
+  FACEBOOK: '',
+  TAGLINE: 'Meneropong Kota Lewat Berita Faktual',
   // Menu utama (urutan sama dengan situs asli). "cat" = nama kategori di WordPress.
   MENU: [
     { label: 'Home', href: 'index.html', key: 'home' },
