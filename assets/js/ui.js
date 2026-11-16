@@ -148,8 +148,17 @@
         '" href="' + esc(href) + '"' + cur + '>' + lab + '</a></li>';
     }).join('');
   }
-  function logo(tag, cls) {
-    return '<' + tag + ' class="' + cls + '">Around<span class="italic font-normal">Jakarta</span><span class="text-red-600">.com</span></' + tag + '>';
+  /* Logo gambar (Opsi B): ikon gedung + tulisan sejajar. Berkas di assets/img/. */
+  function brand(gedungH, tulisanH, dark) {
+    var sfx = dark ? '-gelap' : '';
+    return '<span class="flex items-center gap-2 sm:gap-4">' +
+      '<img src="assets/img/logo-gedung' + sfx + '.png" alt="" aria-hidden="true" width="288" height="148" class="w-auto flex-shrink-0 ' + gedungH + '">' +
+      '<img src="assets/img/logo-tulisan' + sfx + '.png" alt="AroundJakarta.com" width="365" height="49" class="w-auto ' + tulisanH + '"></span>';
+  }
+  UI.brand = brand;
+  /* Logo lengkap (Opsi A): gedung di atas tulisan dan tagline, langsung dari berkas logo. */
+  function logoFull(h) {
+    return '<img src="assets/img/logo-lengkap.png" alt="AroundJakarta.com — Meneropong Kota Lewat Berita Faktual" width="365" height="236" class="w-auto group-hover:opacity-90 transition ' + h + '">';
   }
   UI.top = function (q) {
     var home = UI.active === 'home';
@@ -166,9 +175,9 @@
       '<div class="flex items-center space-x-3 sm:w-1/4">' +
       '<button aria-label="Buka menu" aria-controls="aj-drawer" aria-expanded="false" data-aj-menu class="text-neutral-300 hover:text-white p-1.5 rounded-md hover:bg-neutral-800 flex-shrink-0 min-w-[44px] min-h-[44px] flex items-center justify-center" type="button">' + svg('menu', 'w-6 h-6') + '</button>' +
       '<button aria-label="Cari berita" aria-controls="aj-search" aria-expanded="false" data-aj-search class="hidden sm:flex items-center gap-2 text-xs text-neutral-400 bg-neutral-900 border border-neutral-700 px-3 py-1.5 rounded-full hover:border-neutral-500 hover:text-white transition" type="button">' + svg('search', 'w-3.5 h-3.5') + '<span>Cari berita DKI...</span></button></div>' +
-      '<div class="flex flex-col items-center justify-center text-center flex-1 min-w-0"><a href="index.html" class="inline-block group" aria-label="AroundJakarta.com, ke beranda">' +
-      logo(home ? 'h1' : 'div', 'font-headline text-[26px] leading-tight sm:text-4xl md:text-5xl font-black tracking-tight text-white group-hover:text-neutral-200 transition font-serif') + '</a>' +
-      '<p class="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.25em] text-neutral-400 mt-1 flex items-center justify-center gap-2"><span class="w-6 sm:w-10 h-px bg-neutral-700 inline-block"></span>' + esc(AJ.TAGLINE) + '<span class="w-6 sm:w-10 h-px bg-neutral-700 inline-block"></span></p></div>' +
+      '<div class="flex justify-center flex-1 min-w-0">' + (home ? '<h1 class="m-0">' : '<div>') +
+      '<a href="index.html" class="block group" aria-label="AroundJakarta.com, ke beranda">' + logoFull('h-[84px] sm:h-28') + '</a>' +
+      (home ? '</h1>' : '</div>') + '</div>' +
       '<div class="flex items-center justify-end space-x-3 sm:w-1/4">' +
       '<button aria-label="Cari berita" aria-controls="aj-search" aria-expanded="false" data-aj-search class="sm:hidden text-neutral-300 hover:text-white p-1.5 rounded-md hover:bg-neutral-800 min-w-[44px] min-h-[44px] flex items-center justify-center" type="button">' + svg('search', 'w-5 h-5') + '</button>' +
       '<a class="hidden sm:inline-block text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-neutral-200 px-4 py-2 rounded shadow transition" href="' + esc(AJ.YT_CHANNEL) + '?sub_confirmation=1" rel="noopener">Langganan</a></div>' +
@@ -189,7 +198,7 @@
   UI.drawer = function (q) {
     return '<div class="aj-drawer" id="aj-drawer"><div class="scrim" data-close></div>' +
       '<div class="panel bg-black text-white border-r border-neutral-800 p-5" role="dialog" aria-modal="true" aria-label="Menu">' +
-      '<div class="flex items-center justify-between mb-5">' + logo('div', 'font-headline text-2xl font-black tracking-tight font-serif') +
+      '<div class="flex items-center justify-between mb-5">' + logoFull('h-16') +
       '<button type="button" data-close aria-label="Tutup menu" class="text-neutral-300 hover:text-white min-w-[44px] min-h-[44px] flex items-center justify-center rounded-md hover:bg-neutral-800">' + svg('close', 'w-6 h-6') + '</button></div>' +
       '<form action="cari.html" method="get" role="search" class="flex gap-2 mb-5"><label class="sr-only" for="aj-dq">Kata kunci</label>' +
       '<input id="aj-dq" name="q" type="search" value="' + esc(q || '') + '" placeholder="Cari berita DKI..." class="flex-1 min-w-0 text-sm bg-neutral-900 text-white border border-neutral-700 rounded-full px-4 py-2 focus:outline-none focus:border-red-500">' +
@@ -394,8 +403,7 @@
     }).join('');
     return '<footer class="bg-black text-neutral-400 pt-14 pb-8 border-t border-neutral-800 text-xs" data-purpose="primary-footer">' +
       '<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-12 border-b border-neutral-800">' +
-      '<div class="space-y-3"><a href="index.html" class="inline-block group mb-1">' + logo('div', 'font-headline text-2xl font-black tracking-tight text-white group-hover:text-neutral-200 transition font-serif') +
-      '<p class="text-[9px] uppercase tracking-widest text-neutral-500 font-semibold mt-0.5">' + esc(AJ.TAGLINE) + '</p></a>' +
+      '<div class="space-y-3"><a href="index.html" class="inline-block group mb-1" aria-label="AroundJakarta.com, ke beranda">' + logoFull('h-24') + '</a>' +
       '<p class="text-neutral-400 leading-relaxed text-xs">Portal berita berbahasa Indonesia seputar Jakarta: metro, hukum, ekonomi, event, dan gaya hidup.</p>' +
       '<p class="text-[11px] text-neutral-500">Demo tampilan baru. Seluruh berita, foto, dan video dibaca langsung dari situs aroundjakarta.com tanpa diubah.</p></div>' +
       '<div>' + col('Kategori Berita') + '<ul class="space-y-2" id="aj-foot-cats">' + cats + '</ul></div>' +

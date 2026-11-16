@@ -239,8 +239,7 @@
   var m = '<a class="skip" href="#m-main">Lewati ke konten</a>' +
     '<header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-24 px-gutter-mobile flex flex-col justify-between py-space-xs">' +
     '<div class="flex items-center justify-between h-12"><div class="flex items-center gap-space-sm"><button aria-label="Menu Navigasi" data-aj-menu aria-controls="aj-drawer" aria-expanded="false" type="button" class="w-11 h-11 flex items-center justify-center text-on-surface rounded-full active:bg-surface-container">' + ms('menu', 'text-[24px]') + '</button></div>' +
-    '<div class="flex items-center justify-center"><a class="flex items-baseline" href="index.html" aria-label="AroundJakarta.com, ke beranda"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-bold">AroundJakarta</span>' +
-    '<span class="w-1.5 h-1.5 rounded-full bg-primary-container ml-0.5 inline-block animate-pulse"></span><span class="font-meta-label text-meta-label text-tertiary ml-0.5">com</span></a></div>' +
+    '<div class="flex items-center justify-center min-w-0"><a class="flex items-center" href="index.html" aria-label="AroundJakarta.com, ke beranda">' + U.brand('h-8', 'h-[18px]', true) + '</a></div>' +
     '<div class="flex items-center gap-space-xs"><button aria-label="Cari Berita" id="m-search-btn" type="button" class="w-11 h-11 flex items-center justify-center text-on-surface rounded-full active:bg-surface-container">' + ms('search', 'text-[22px]') + '</button></div></div>' +
     '<div class="h-6 px-1 flex items-center justify-between text-meta-caption font-meta-caption text-secondary"><div class="flex items-center gap-space-xs">' +
     '<span class="font-meta-eyebrow text-meta-eyebrow uppercase tracking-wider text-primary-container font-extrabold">EDISI HARI INI</span><span class="text-tertiary-container text-[10px]" aria-hidden="true">•</span>' +
